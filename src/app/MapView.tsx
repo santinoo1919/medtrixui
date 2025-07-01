@@ -1,7 +1,7 @@
 "use client";
 
 import { MapContainer, TileLayer } from "react-leaflet";
-import WrecksGeoJSON from "./WrecksGeoJSON";
+// import WrecksGeoJSON from "./WrecksGeoJSON";
 
 export default function MapView() {
   return (
@@ -14,7 +14,7 @@ export default function MapView() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution="&copy; OpenStreetMap contributors"
       />
-      <WrecksGeoJSON />
+      {/* <WrecksGeoJSON /> */}
     </MapContainer>
   );
 }
