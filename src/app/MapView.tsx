@@ -1,6 +1,6 @@
 "use client";
 
-import { MapContainer, TileLayer } from "react-leaflet";
+import { MapContainer } from "react-leaflet";
 // import WrecksGeoJSON from "./WrecksGeoJSON";
 
 export default function MapView() {
