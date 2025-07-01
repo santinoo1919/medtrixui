@@ -1,3 +1,7 @@
+// WrecksLayer.tsx temporarily muted for troubleshooting build errors.
+// Uncomment and fix errors after successful deployment.
+
+/*
 "use client";
 import { useEffect, useState } from "react";
 import MarkerClusterGroup from "react-leaflet-cluster";
@@ -50,3 +54,4 @@ export default function WrecksLayer() {
     </MarkerClusterGroup>
   );
 }
+*/
