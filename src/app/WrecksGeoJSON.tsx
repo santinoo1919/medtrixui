@@ -2,7 +2,7 @@
 
 import { GeoJSON, useMapEvents } from "react-leaflet";
 import { useEffect, useState, useCallback, useRef } from "react";
-import type { FeatureCollection } from "geojson";
+import type { Feature, FeatureCollection } from "geojson";
 import L from "leaflet";
 
 const wreckIcon = L.icon({
@@ -37,16 +37,23 @@ export default function WrecksGeoJSON() {
       .then((data) => {
         const features = data.features
           .filter(
-            (f: any) =>
+            (f: Feature) =>
               f.properties && f.properties.longitude && f.properties.latitude
           )
-          .map((f: any) => ({
-            ...f,
-            geometry: {
-              type: "Point",
-              coordinates: [f.properties.longitude, f.properties.latitude],
-            },
-          }));
+          .map((f: Feature) =>
+            f.properties
+              ? {
+                  ...f,
+                  geometry: {
+                    type: "Point",
+                    coordinates: [
+                      f.properties.longitude,
+                      f.properties.latitude,
+                    ],
+                  },
+                }
+              : f
+          );
         setGeojsonData({ ...data, features });
         setLoading(false);
       })

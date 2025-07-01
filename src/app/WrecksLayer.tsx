@@ -3,12 +3,13 @@ import { useEffect, useState } from "react";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import { Marker, Popup } from "react-leaflet";
 import { patchGeoJsonWithLonLat } from "../utils/geojson";
+import type { Feature } from "geojson";
 
 const WFS_URL =
   "https://services.data.shom.fr/INSPIRE/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=EPAVES_BDD_WFS:wrecks&outputFormat=application/json&srsName=EPSG:4326";
 
 export default function WrecksLayer() {
-  const [features, setFeatures] = useState<any[]>([]);
+  const [features, setFeatures] = useState<Feature[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
