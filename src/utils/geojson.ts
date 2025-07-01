@@ -1,6 +1,6 @@
-import type { Feature } from "geojson";
+import type { Feature, FeatureCollection } from "geojson";
 
-export function patchGeoJsonWithLonLat(data: any) {
+export function patchGeoJsonWithLonLat(data: FeatureCollection) {
   if (!data.features) return data;
   const features = data.features
     .filter(
