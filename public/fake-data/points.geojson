@@ -1,0 +1,25 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [3.9, 43.6]
+      },
+      "properties": {
+        "name": "Montpellier"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.8, 45.75]
+      },
+      "properties": {
+        "name": "Lyon"
+      }
+    }
+  ]
+}
